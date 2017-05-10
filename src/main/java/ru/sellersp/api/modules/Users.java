@@ -1,12 +1,8 @@
 package ru.sellersp.api.modules;
 
-import org.eclipse.jetty.util.ConcurrentHashSet;
-import org.jvnet.hk2.annotations.Service;
 import ru.sellersp.api.beans.User;
 
-import javax.inject.Named;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 
 /**

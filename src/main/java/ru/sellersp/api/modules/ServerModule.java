@@ -5,7 +5,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.servlet.ServletContainer;
 import org.jvnet.hk2.annotations.Service;
-import ru.sellersp.api.ServerConfiguration;
+import ru.sellersp.api.AppConfig;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -39,7 +39,7 @@ public class ServerModule {
         }
 
         ServletContextHandler servletContextHandler = new ServletContextHandler();
-        servletContextHandler.addServlet(new ServletHolder(new ServletContainer(new ServerConfiguration())), "/rest/*");
+        servletContextHandler.addServlet(new ServletHolder(new ServletContainer(new AppConfig())), "/rest/*");
         server.setHandler(servletContextHandler);
 
         try {

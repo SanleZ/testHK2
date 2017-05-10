@@ -23,14 +23,14 @@ public class LoginService {
     @Inject
     private Users users;
 
- //   @Inject
-//    private VkModule vkModule;
+    @Inject
+    private VkModule vkModule;
 
     @GET
     @Path("login")
     @Produces(MediaType.TEXT_PLAIN)
     public String logIn(@QueryParam("code") String code) {
-        UserActor userActor = new UserActor(12321321,"sdfdsfdsf");
+        UserActor userActor = vkModule.getUserActor(code);
         if (userActor != null) {
             User user = new User();
             user.setUserVkId(userActor.getId());
