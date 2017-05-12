@@ -15,12 +15,10 @@ import java.util.Properties;
 /**
  * Created by Sanle on 20.04.2017.
  */
-
 @Service
 public class VkModule {
 
     @Inject
-    @Named("props")
     private PropertiesModule propertiesModule;
 
     private VkApiClient vkApiClient = new VkApiClient(HttpTransportClient.getInstance());

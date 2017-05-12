@@ -18,7 +18,6 @@ import javax.inject.Named;
 public class ServerModule {
 
     @Inject
-    @Named("props")
     private PropertiesModule propertiesModule;
 
     private Server server;
@@ -32,8 +31,8 @@ public class ServerModule {
 
     public void start(){
         try {
-//            server = new Server(Integer.parseInt(propertiesModule.provideProperties().getProperty("server.port")));
-            server = new Server(8080);
+            server = new Server(Integer.parseInt(propertiesModule.provideProperties().getProperty("server.port")));
+          //  server = new Server(8080);
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }

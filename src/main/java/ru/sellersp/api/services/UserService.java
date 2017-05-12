@@ -14,13 +14,12 @@ import java.util.ArrayList;
  * Created by Sanle on 08.05.2017.
  */
 @Path("/users/{id:\\d+}")
-@Service
 public class UserService {
 
     @Inject
     private Users users;
 
-    @RolesAllowed("ADMIN")
+   // @RolesAllowed("ADMIN")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
